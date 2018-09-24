@@ -65,7 +65,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged && run-s validate",
-      "pre-push": "lint-staged && run-s validate"
+      "pre-push": "run-s build:production"
     }
   },
   "lint-staged": {
