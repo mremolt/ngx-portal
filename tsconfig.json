@@ -15,6 +15,11 @@
     "strictPropertyInitialization": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+    "plugins": [
+      {
+        "name": "tslint-language-service-ts3"
+      }
+    ]
   }
 }
