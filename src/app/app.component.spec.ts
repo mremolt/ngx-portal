@@ -19,8 +19,14 @@ describe('AppComponent', () => {
   });
 
   beforeEach(() => {
+    jest.spyOn(console, 'log').mockImplementation(() => {});
+
     fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   it('should create the app', () => {
