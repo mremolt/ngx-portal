@@ -9,7 +9,7 @@
       "projectType": "application",
       "prefix": "mr",
       "schematics": {
-        "@schematics/angular:component": {
+        "@ngrx/schematics:component": {
           "styleext": "scss",
           "changeDetection": "OnPush"
         }
@@ -79,5 +79,8 @@
       }
     }
   },
-  "defaultProject": "ngx-portal"
+  "defaultProject": "ngx-portal",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

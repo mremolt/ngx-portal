@@ -1,10 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
 import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { NavigationModule } from './navigation/navigation.module';
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    CoreModule,
     NavigationModule,
   ],
   providers: [],
