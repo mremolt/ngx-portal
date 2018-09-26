@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth Reducer Authenticate action should set loading to true 1`] = `
+Object {
+  "error": null,
+  "loading": true,
+  "token": Object {
+    "accessToken": "",
+  },
+}
+`;
+
+exports[`Auth Reducer AuthenticateError action should empty token 1`] = `
+Object {
+  "error": "payload",
+  "loading": false,
+  "token": Object {
+    "accessToken": "",
+  },
+}
+`;
+
+exports[`Auth Reducer AuthenticateError action should set error 1`] = `
+Object {
+  "error": "payload",
+  "loading": false,
+  "token": Object {
+    "accessToken": "",
+  },
+}
+`;
+
+exports[`Auth Reducer AuthenticateSuccess action should set token 1`] = `
+Object {
+  "error": null,
+  "loading": false,
+  "token": Object {
+    "accessToken": "12345",
+  },
+}
+`;

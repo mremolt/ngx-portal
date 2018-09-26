@@ -1,9 +1,10 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
 
-import { AppComponent } from './app.component';
 import { configureTestBedSuite } from '../testing';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   configureTestBedSuite();
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
 
   beforeAll(async () => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, StoreModule.forRoot({})],
       declarations: [AppComponent],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();

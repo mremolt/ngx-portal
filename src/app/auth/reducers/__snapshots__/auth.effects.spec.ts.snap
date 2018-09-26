@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthEffects authenticate$ emits AuthenticateError on error HTTP call 1`] = `
+AuthenticateError {
+  "payload": HttpErrorResponse {
+    "error": null,
+    "headers": HttpHeaders {
+      "headers": Map {},
+      "lazyUpdate": null,
+      "normalizedNames": Map {},
+    },
+    "message": "Http failure response for http://localhost:3001/auth/login: 403 Nix!",
+    "name": "HttpErrorResponse",
+    "ok": false,
+    "status": 403,
+    "statusText": "Nix!",
+    "url": "http://localhost:3001/auth/login",
+  },
+  "type": "[Auth] Authenticate Error",
+}
+`;
+
+exports[`AuthEffects authenticate$ emits AuthenticateSuccess on successful HTTP call 1`] = `
+AuthenticateSuccess {
+  "payload": Object {
+    "authToken": "1234567890",
+  },
+  "type": "[Auth] Authenticate Success",
+}
+`;

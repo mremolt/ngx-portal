@@ -2,6 +2,7 @@
   "extends": "../tslint.json",
   "rules": {
     "directive-selector": [true, "attribute", "mr", "camelCase"],
-    "component-selector": [true, "element", "mr", "kebab-case"]
+    "component-selector": [true, "element", "mr", "kebab-case"],
+    "max-classes-per-file": [false]
   }
 }

@@ -2,6 +2,7 @@
 
 exports[`AppComponent renders the component 1`] = `
 <mr-root
+  store={[Function Store]}
   title={[Function String]}
 >
   <div
