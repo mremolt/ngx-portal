@@ -19,9 +19,12 @@ export class AuthEffects {
   @Effect()
   authenticate$ = this.actions$.pipe(
     ofType<Authenticate>(AuthActionTypes.Authenticate),
-    flatMap(action => this.http.post<AuthToken>(`${this.env.apiUrl}/auth/login`, action.payload)),
-    map(data => new AuthenticateSuccess(data)),
-    catchError(e => of(new AuthenticateError(e)))
+    flatMap(action =>
+      this.http.post<AuthToken>(`${this.env.apiUrl}/auth/login`, action.payload).pipe(
+        map(data => new AuthenticateSuccess(data)),
+        catchError(e => of(new AuthenticateError(e)))
+      )
+    )
   );
 
   constructor(

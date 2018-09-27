@@ -20,6 +20,9 @@ export function reducer(state = initialState, action: AuthActions): State {
 
     case AuthActionTypes.AuthenticateError:
       return { ...initialState, error: action.payload };
+
+    case AuthActionTypes.Logout:
+      return initialState;
   }
   return state;
 }

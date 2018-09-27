@@ -2,4 +2,53 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #333;
+}
+
+h3 {
+  padding-left: 0.5rem;
+}
+
+.form-group {
+  padding: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.1rem;
+
+  label {
+    flex: 1;
+    padding-bottom: 0.5rem;
+  }
+
+  input,
+  select,
+  textarea {
+    flex: 3;
+    padding: 0.4rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.3rem;
+    border: 1px solid #ddd;
+
+    &:focus {
+      // border: 1px solid rgba(81, 203, 238, 1);
+      // box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid #aaa;
+      box-shadow: 0 0 5px #aaa;
+    }
+  }
+
+  button {
+    background: #ddd;
+    border: 1px solid #999;
+    border-radius: 0.2rem;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    flex: 1;
+
+    &:hover {
+      border: 1px solid #aaa;
+      box-shadow: 0 0 5px #aaa;
+    }
+  }
 }

@@ -1,6 +1,4 @@
 nav {
-  // background-color: #ddd;
-
   h2 {
     margin: 0;
     padding: 1em 1em 0.5em 1em;
@@ -14,13 +12,17 @@ nav {
     li {
       list-style: none;
       padding: 0;
-      a {
+
+      .nav-item {
         display: block;
+        cursor: pointer;
+
+        padding: 0.5em 1em 0.5em 1em;
         color: #333;
         font-size: 1.3em;
         text-decoration: none;
-
-        padding: 0.5em 1em 0.5em 1em;
+        text-align: left;
+        border: none;
 
         &.active {
           background-color: #ccc;
@@ -30,6 +32,27 @@ nav {
           background-color: #bbb;
         }
       }
+
+      button.nav-item {
+        width: 100%;
+        background-color: inherit;
+
+        &.active {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  .error {
+    border: 1px solid rgb(255, 50, 50);
+    border-radius: 0.2rem;
+    background-color: rgb(255, 150, 150);
+    color: rgb(255, 20, 20);
+    margin: 0.5rem;
+
+    strong {
+      margin-right: 0.3rem;
     }
   }
 }

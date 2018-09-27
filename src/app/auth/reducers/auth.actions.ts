@@ -5,6 +5,7 @@ export enum AuthActionTypes {
   Authenticate = '[Auth] Authenticate',
   AuthenticateSuccess = '[Auth] Authenticate Success',
   AuthenticateError = '[Auth] Authenticate Error',
+  Logout = '[Auth] Logout',
 }
 
 export type AuthCredentials = Readonly<{ email: string; password: string }>;
@@ -34,4 +35,8 @@ export class AuthenticateError implements Action {
   constructor(public payload: HttpErrorResponse) {}
 }
 
-export type AuthActions = Authenticate | AuthenticateSuccess | AuthenticateError;
+export class Logout implements Action {
+  readonly type = AuthActionTypes.Logout;
+}
+
+export type AuthActions = Authenticate | AuthenticateSuccess | AuthenticateError | Logout;

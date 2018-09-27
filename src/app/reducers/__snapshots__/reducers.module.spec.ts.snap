@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReducersModule getMetaReducers returns an Array of meta reducers 1`] = `
+Array [
+  [Function],
+  [Function],
+]
+`;
+
+exports[`ReducersModule getReducers returns the reducers 1`] = `
+Object {
+  "router": [Function],
+}
+`;

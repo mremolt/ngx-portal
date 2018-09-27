@@ -1,4 +1,4 @@
-import { Authenticate, AuthenticateError, AuthenticateSuccess } from './auth.actions';
+import { Authenticate, AuthenticateError, AuthenticateSuccess, Logout } from './auth.actions';
 import { initialState, reducer } from './auth.reducer';
 
 describe('Auth Reducer', () => {
@@ -56,6 +56,17 @@ describe('Auth Reducer', () => {
       const result = reducer(currentState, action);
 
       expect(result).toMatchSnapshot();
+    });
+  });
+
+  describe('Logout action', () => {
+    it('should set initialState', () => {
+      const action = new Logout();
+      const currentState = { ...initialState, token: { accessToken: '12345' } };
+
+      const result = reducer(currentState, action);
+
+      expect(result).toBe(initialState);
     });
   });
 });
