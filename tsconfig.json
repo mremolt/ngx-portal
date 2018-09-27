@@ -21,5 +21,10 @@
         "name": "tslint-language-service-ts3"
       }
     ]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "disableTypeScriptVersionCheck": true
   }
 }
