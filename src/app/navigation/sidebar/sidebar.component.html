@@ -2,10 +2,8 @@
   <h2>Navigation</h2>
 
   <ul *ngIf="authenticated$ | async; else anonymous">
-    <li><a class="nav-item" routerLink="/" routerLinkActive="active">Home</a></li>
-    <li><a class="nav-item" routerLink="/foo" routerLinkActive="active">Two</a></li>
-    <li><a class="nav-item" routerLink="/bar" routerLinkActive="active">Three</a></li>
-    <li><a class="nav-item" routerLink="/baz" routerLinkActive="active">Four</a></li>
+    <li><a class="nav-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+    <li><a class="nav-item" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
     <li><button type="button" class="nav-item" (click)="logout()">Logout</button></li>
   </ul>
 

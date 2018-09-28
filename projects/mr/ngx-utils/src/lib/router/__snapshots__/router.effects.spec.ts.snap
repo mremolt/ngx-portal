@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router Effects navigate$ triggers router navigation 1`] = `
+Object {
+  "path": Array [
+    "nowhere",
+  ],
+  "query": Object {
+    "id": 42,
+  },
+}
+`;

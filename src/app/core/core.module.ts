@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@mr/ngx-utils';
 import { EffectsModule } from '@ngrx/effects';
 
 import { environment } from '../../environments/environment';
@@ -18,6 +19,7 @@ import { APP_ENVIRONMENT } from '../tokens';
     ReducersModule,
     EffectsModule.forRoot([AppEffects]),
     // Features
+    RouterModule,
     AuthModule,
   ],
   declarations: [],

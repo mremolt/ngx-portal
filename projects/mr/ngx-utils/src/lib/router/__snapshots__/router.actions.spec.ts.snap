@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router actions Back creates the correct action 1`] = `
+Back {
+  "type": "[Router] Back",
+}
+`;
+
+exports[`Router actions Forward creates the correct action 1`] = `
+Forward {
+  "type": "[Router] Forward",
+}
+`;
+
+exports[`Router actions Go creates the correct action 1`] = `
+Go {
+  "payload": Object {
+    "path": Array [
+      "foo",
+    ],
+  },
+  "type": "[Router] Go",
+}
+`;

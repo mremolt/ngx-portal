@@ -6,10 +6,13 @@ module.exports = {
   coverageThreshold: {
     global: {
       branches: 70,
-      functions: 80,
-      lines: 90,
-      statements: 90,
+      functions: 100,
+      lines: 100,
+      statements: 100,
     },
   },
   modulePathIgnorePatterns: ['<rootDir>/dist'],
+  moduleNameMapper: {
+    '@mr/ngx-utils': '<rootDir>/projects/mr/ngx-utils/src/public_api.ts',
+  },
 };

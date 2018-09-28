@@ -17,7 +17,6 @@ exports[`AppComponent renders the component 1`] = `
     <div
       class="main"
     >
-       Content 
       <router-outlet />
     </div>
     <div

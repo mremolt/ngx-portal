@@ -20,7 +20,11 @@
       {
         "name": "tslint-language-service-ts3"
       }
-    ]
+    ],
+    "paths": {
+      "@mr/ngx-utils": ["projects/mr/ngx-utils/src/public_api.ts"],
+      "@mr/ngx-utils/*": ["projects/mr/ngx-utils/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

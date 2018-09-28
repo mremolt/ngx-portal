@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`auth selectors selectAuth returns auth state 1`] = `
+Object {
+  "error": HttpErrorResponse {
+    "error": "ARGH",
+    "headers": HttpHeaders {
+      "headers": Map {},
+      "lazyUpdate": null,
+      "normalizedNames": Map {},
+    },
+    "message": "Http failure response for (unknown url): undefined undefined",
+    "name": "HttpErrorResponse",
+    "ok": false,
+    "status": 0,
+    "statusText": "Unknown Error",
+    "url": null,
+  },
+  "loading": false,
+  "token": Object {
+    "accessToken": "entry",
+  },
+}
+`;
+
+exports[`auth selectors selectAuthenticated returns sub state 1`] = `true`;
+
+exports[`auth selectors selectError returns sub state 1`] = `
+HttpErrorResponse {
+  "error": "ARGH",
+  "headers": HttpHeaders {
+    "headers": Map {},
+    "lazyUpdate": null,
+    "normalizedNames": Map {},
+  },
+  "message": "Http failure response for (unknown url): undefined undefined",
+  "name": "HttpErrorResponse",
+  "ok": false,
+  "status": 0,
+  "statusText": "Unknown Error",
+  "url": null,
+}
+`;
+
+exports[`auth selectors selectLoading returns sub state 1`] = `false`;
+
+exports[`auth selectors selectToken returns sub state 1`] = `
+Object {
+  "accessToken": "entry",
+}
+`;

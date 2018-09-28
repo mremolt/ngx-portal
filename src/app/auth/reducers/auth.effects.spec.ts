@@ -24,6 +24,7 @@ describe('AuthEffects', () => {
 
     httpMock = TestBed.get(HttpTestingController);
     effects = TestBed.get(AuthEffects);
+    actions$ = new ReplaySubject(1);
   });
 
   it('should be created', () => {
@@ -32,7 +33,6 @@ describe('AuthEffects', () => {
 
   describe('authenticate$', () => {
     beforeEach(() => {
-      actions$ = new ReplaySubject(1);
       actions$.next(new Authenticate('test1@example.com', 'secret'));
     });
 

@@ -77,6 +77,39 @@
           }
         }
       }
+    },
+    "@mr/ngx-utils": {
+      "root": "projects/mr/ngx-utils",
+      "sourceRoot": "projects/mr/ngx-utils/src",
+      "projectType": "library",
+      "prefix": "mr",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mr/ngx-utils/tsconfig.lib.json",
+            "project": "projects/mr/ngx-utils/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mr/ngx-utils/src/test.ts",
+            "tsConfig": "projects/mr/ngx-utils/tsconfig.spec.json",
+            "karmaConfig": "projects/mr/ngx-utils/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mr/ngx-utils/tsconfig.lib.json",
+              "projects/mr/ngx-utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-portal",

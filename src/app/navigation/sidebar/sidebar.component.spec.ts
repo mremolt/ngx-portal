@@ -1,22 +1,25 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Store, StoreModule } from '@ngrx/store';
 
+import { configureTestBedSuite } from '../../../testing';
 import { reducer } from '../../auth/reducers/auth.reducer';
 import { SidebarComponent } from './sidebar.component';
 
 describe('SidebarComponent', () => {
+  configureTestBedSuite();
+
   let component: SidebarComponent;
   let fixture: ComponentFixture<SidebarComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeAll(async () => {
+    await TestBed.configureTestingModule({
       declarations: [SidebarComponent],
       imports: [ReactiveFormsModule, StoreModule.forRoot<any, any>({ auth: reducer })],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SidebarComponent);
@@ -28,6 +31,10 @@ describe('SidebarComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render', () => {
+    expect(fixture).toMatchSnapshot();
+  });
+
   describe('Actions', () => {
     let store: Store<any>;
     let dispatchSpy: jest.Mock;
@@ -35,6 +42,22 @@ describe('SidebarComponent', () => {
     beforeEach(() => {
       store = TestBed.get(Store);
       dispatchSpy = jest.spyOn(store, 'dispatch').mockImplementation(() => {});
+    });
+
+    describe('form', () => {
+      it('validates', () => {
+        component.form.setValue({ email: 'test@example.com', password: 'pass' });
+        expect(component.form.valid).toBeTruthy();
+
+        component.form.setValue({ email: 'test@example.com', password: '' });
+        expect(component.form.valid).toBeFalsy();
+
+        component.form.setValue({ email: 'test', password: 'pass' });
+        expect(component.form.valid).toBeFalsy();
+
+        component.form.setValue({ email: 'test-example.com', password: 'pass' });
+        expect(component.form.valid).toBeFalsy();
+      });
     });
 
     describe('login', () => {

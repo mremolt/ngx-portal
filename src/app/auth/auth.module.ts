@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
-import * as fromAuth from './reducers/auth.reducer';
+import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+
 import { AuthEffects } from './reducers/auth.effects';
+import { AuthGuard } from './reducers/auth.guard';
+import * as fromAuth from './reducers/auth.reducer';
 
 @NgModule({
   imports: [
@@ -12,5 +14,6 @@ import { AuthEffects } from './reducers/auth.effects';
     EffectsModule.forFeature([AuthEffects]),
   ],
   declarations: [],
+  providers: [AuthGuard],
 })
 export class AuthModule {}
