@@ -21,6 +21,8 @@
     "build:production": "run-s validate lint test:coverage compile:production doc",
     "serve:production": "ws --port 8080  --compress --directory dist/ngx-portal --spa index.html",
     "stats:production": "webpack-bundle-analyzer dist/ngx-portal/stats.json",
+    "build:ngx-utils": "ng build @mr/ngx-utils",
+    "build:packages": "run-s build:ngx-utils",
     "commit": "git-cz"
   },
   "private": true,
@@ -87,7 +89,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged && run-s validate",
-      "pre-push": "run-s build:production"
+      "pre-push": "run-s build:production build:packages"
     }
   },
   "lint-staged": {

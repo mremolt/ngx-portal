@@ -114,6 +114,9 @@
   },
   "defaultProject": "ngx-portal",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "defaultCollection": "@ngrx/schematics",
+    "warnings": {
+      "typescriptMismatch": false
+    }
   }
 }
