@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Go } from '@mr/ngx-utils';
+import { APP_ENVIRONMENT, ApiError, ApiRequestActionTypes, AppReset, Go } from '@mr/ngx-utils';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 import { catchError, flatMap, map, mapTo } from 'rxjs/operators';
 
 import { Environment } from '../../../environments/environment';
-import { APP_ENVIRONMENT } from '../../tokens';
 import {
   AuthActionTypes,
   AuthToken,
@@ -39,6 +38,17 @@ export class AuthEffects {
   redirectAfterLogout$ = this.actions$.pipe(
     ofType<Logout>(AuthActionTypes.Logout),
     mapTo(new Go({ path: ['/'] }))
+  );
+
+  @Effect()
+  resetOnApiErrors$ = this.actions$.pipe(
+    ofType<ApiError>(ApiRequestActionTypes.ApiError),
+    map(action => {
+      if ([401].includes(action.payload.status)) {
+        return new AppReset();
+      }
+      return EMPTY;
+    })
   );
 
   constructor(

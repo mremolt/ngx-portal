@@ -4,6 +4,7 @@ exports[`ReducersModule getMetaReducers returns an Array of meta reducers 1`] = 
 Array [
   [Function],
   [Function],
+  [Function],
 ]
 `;
 

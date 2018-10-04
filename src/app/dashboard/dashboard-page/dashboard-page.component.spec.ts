@@ -1,4 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { DashboardPageComponent } from './dashboard-page.component';
 
@@ -9,6 +11,8 @@ describe('DashboardPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DashboardPageComponent],
+      imports: [StoreModule.forRoot({})],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
 

@@ -28,3 +28,25 @@ AuthenticateSuccess {
   "type": "[Auth] Authenticate Success",
 }
 `;
+
+exports[`AuthEffects redirectAfterLogin$ calls Go action redirecting to dashboard 1`] = `
+Go {
+  "payload": Object {
+    "path": Array [
+      "dashboard",
+    ],
+  },
+  "type": "[Router] Go",
+}
+`;
+
+exports[`AuthEffects redirectAfterLogout$ calls Go action redirecting to root 1`] = `
+Go {
+  "payload": Object {
+    "path": Array [
+      "/",
+    ],
+  },
+  "type": "[Router] Go",
+}
+`;

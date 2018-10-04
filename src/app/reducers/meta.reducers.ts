@@ -1,3 +1,4 @@
+import { resetMetaReducer } from '@mr/ngx-utils';
 import { ActionReducer, MetaReducer } from '@ngrx/store';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { storeLogger } from 'ngrx-store-logger';
@@ -15,6 +16,8 @@ export function localStorageSyncReducer(
   return localStorageSync({ keys: ['auth'], rehydrate: true })(reducer);
 }
 
+const commonMetaReducers = [localStorageSyncReducer, resetMetaReducer];
+
 export const metaReducers: MetaReducer<RootState>[] = environment.production
-  ? [localStorageSyncReducer]
-  : [logger, localStorageSyncReducer];
+  ? commonMetaReducers
+  : [logger, ...commonMetaReducers];

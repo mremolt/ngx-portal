@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, error and complete on 404 request 1`] = `
+FetchUsersStart {
+  "payload": undefined,
+  "type": "[Users] Fetch Start",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, error and complete on 404 request 2`] = `
+FetchUsersError {
+  "payload": HttpErrorResponse {
+    "error": null,
+    "headers": HttpHeaders {
+      "headers": Map {},
+      "lazyUpdate": null,
+      "normalizedNames": Map {},
+    },
+    "message": "Http failure response for http://localhost:3001/users: 404 Nowhere",
+    "name": "HttpErrorResponse",
+    "ok": false,
+    "status": 404,
+    "statusText": "Nowhere",
+    "url": "http://localhost:3001/users",
+  },
+  "type": "[Users] Fetch Error",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, error and complete on 404 request 3`] = `
+ApiError {
+  "payload": HttpErrorResponse {
+    "error": null,
+    "headers": HttpHeaders {
+      "headers": Map {},
+      "lazyUpdate": null,
+      "normalizedNames": Map {},
+    },
+    "message": "Http failure response for http://localhost:3001/users: 404 Nowhere",
+    "name": "HttpErrorResponse",
+    "ok": false,
+    "status": 404,
+    "statusText": "Nowhere",
+    "url": "http://localhost:3001/users",
+  },
+  "type": "[API] Error",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, error and complete on 404 request 4`] = `
+FetchUsersComplete {
+  "type": "[Users] Fetch Complete",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, success and complete on 200 request 1`] = `
+FetchUsersStart {
+  "payload": undefined,
+  "type": "[Users] Fetch Start",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, success and complete on 200 request 2`] = `
+FetchUsersSuccess {
+  "payload": Array [],
+  "type": "[Users] Fetch Success",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ with complete action fires start, success and complete on 200 request 3`] = `
+FetchUsersComplete {
+  "type": "[Users] Fetch Complete",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ without complete action fires start, success and complete on 200 request 1`] = `
+FetchUsersStart {
+  "payload": undefined,
+  "type": "[Users] Fetch Start",
+}
+`;
+
+exports[`ApiRequestEffects processApiRequest$ without complete action fires start, success and complete on 200 request 2`] = `
+FetchUsersSuccess {
+  "payload": Array [],
+  "type": "[Users] Fetch Success",
+}
+`;

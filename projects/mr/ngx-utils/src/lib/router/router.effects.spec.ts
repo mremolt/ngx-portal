@@ -32,6 +32,7 @@ describe('Router Effects', () => {
 
   it('should be created', () => {
     expect(effects).toBeTruthy();
+    expect(effects).toBeInstanceOf(RouterEffects);
   });
 
   describe('navigate$', () => {

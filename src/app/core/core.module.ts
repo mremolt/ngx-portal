@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@mr/ngx-utils';
+import { APP_ENVIRONMENT, ApiModule, RouterModule } from '@mr/ngx-utils';
 import { EffectsModule } from '@ngrx/effects';
 
 import { environment } from '../../environments/environment';
 import { AppEffects } from '../app.effects';
 import { AuthModule } from '../auth/auth.module';
+import { TokenSelector } from '../auth/reducers/auth.selectors';
 import { ReducersModule } from '../reducers/reducers.module';
-import { APP_ENVIRONMENT } from '../tokens';
 
 @NgModule({
   imports: [
@@ -20,6 +20,7 @@ import { APP_ENVIRONMENT } from '../tokens';
     EffectsModule.forRoot([AppEffects]),
     // Features
     RouterModule,
+    ApiModule.forRoot(TokenSelector, environment),
     AuthModule,
   ],
   declarations: [],

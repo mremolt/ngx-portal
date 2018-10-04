@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApiRequest Actions ApiDeleteAction builds the correct action 1`] = `
+ApiDeleteAction {
+  "payload": Object {
+    "actions": Object {
+      "complete": [Function],
+      "error": [Function],
+      "start": [Function],
+      "success": [Function],
+    },
+    "request": HttpRequest {
+      "body": null,
+      "headers": HttpHeaders {
+        "headers": Map {},
+        "lazyUpdate": null,
+        "normalizedNames": Map {},
+      },
+      "method": "DELETE",
+      "params": HttpParams {
+        "cloneFrom": null,
+        "encoder": HttpUrlEncodingCodec {},
+        "map": null,
+        "updates": null,
+      },
+      "reportProgress": false,
+      "responseType": "json",
+      "url": "users",
+      "urlWithParams": "users",
+      "withCredentials": false,
+    },
+  },
+  "type": "[API] Request",
+}
+`;
+
+exports[`ApiRequest Actions ApiError builds the correct action 1`] = `
+ApiError {
+  "payload": HttpErrorResponse {
+    "error": null,
+    "headers": HttpHeaders {
+      "headers": Map {},
+      "lazyUpdate": null,
+      "normalizedNames": Map {},
+    },
+    "message": "Http failure response for (unknown url): undefined undefined",
+    "name": "HttpErrorResponse",
+    "ok": false,
+    "status": 0,
+    "statusText": "Unknown Error",
+    "url": null,
+  },
+  "type": "[API] Error",
+}
+`;
+
+exports[`ApiRequest Actions ApiGetAction builds the correct action 1`] = `
+ApiGetAction {
+  "payload": Object {
+    "actions": Object {
+      "complete": [Function],
+      "error": [Function],
+      "start": [Function],
+      "success": [Function],
+    },
+    "request": HttpRequest {
+      "body": null,
+      "headers": HttpHeaders {
+        "headers": Map {},
+        "lazyUpdate": null,
+        "normalizedNames": Map {},
+      },
+      "method": "GET",
+      "params": HttpParams {
+        "cloneFrom": null,
+        "encoder": HttpUrlEncodingCodec {},
+        "map": null,
+        "updates": null,
+      },
+      "reportProgress": false,
+      "responseType": "json",
+      "url": "users",
+      "urlWithParams": "users",
+      "withCredentials": false,
+    },
+  },
+  "type": "[API] Request",
+}
+`;
+
+exports[`ApiRequest Actions ApiPostAction builds the correct action 1`] = `
+ApiPostAction {
+  "payload": Object {
+    "actions": Object {
+      "complete": [Function],
+      "error": [Function],
+      "start": [Function],
+      "success": [Function],
+    },
+    "request": HttpRequest {
+      "body": Object {
+        "id": 42,
+      },
+      "headers": HttpHeaders {
+        "headers": Map {},
+        "lazyUpdate": null,
+        "normalizedNames": Map {},
+      },
+      "method": "POST",
+      "params": HttpParams {
+        "cloneFrom": null,
+        "encoder": HttpUrlEncodingCodec {},
+        "map": null,
+        "updates": null,
+      },
+      "reportProgress": false,
+      "responseType": "json",
+      "url": "users",
+      "urlWithParams": "users",
+      "withCredentials": false,
+    },
+  },
+  "type": "[API] Request",
+}
+`;
+
+exports[`ApiRequest Actions ApiPutAction builds the correct action 1`] = `
+ApiPutAction {
+  "payload": Object {
+    "actions": Object {
+      "complete": [Function],
+      "error": [Function],
+      "start": [Function],
+      "success": [Function],
+    },
+    "request": HttpRequest {
+      "body": Object {
+        "id": 42,
+      },
+      "headers": HttpHeaders {
+        "headers": Map {},
+        "lazyUpdate": null,
+        "normalizedNames": Map {},
+      },
+      "method": "PUT",
+      "params": HttpParams {
+        "cloneFrom": null,
+        "encoder": HttpUrlEncodingCodec {},
+        "map": null,
+        "updates": null,
+      },
+      "reportProgress": false,
+      "responseType": "json",
+      "url": "users",
+      "urlWithParams": "users",
+      "withCredentials": false,
+    },
+  },
+  "type": "[API] Request",
+}
+`;
+
+exports[`ApiRequest Actions ApiRequest builds the correct action 1`] = `
+ApiRequest {
+  "payload": Object {
+    "actions": Object {
+      "complete": [Function],
+      "error": [Function],
+      "start": [Function],
+      "success": [Function],
+    },
+    "request": HttpRequest {
+      "body": null,
+      "headers": HttpHeaders {
+        "headers": Map {},
+        "lazyUpdate": null,
+        "normalizedNames": Map {},
+      },
+      "method": "GET",
+      "params": HttpParams {
+        "cloneFrom": null,
+        "encoder": HttpUrlEncodingCodec {},
+        "map": null,
+        "updates": null,
+      },
+      "reportProgress": false,
+      "responseType": "json",
+      "url": "users",
+      "urlWithParams": "users",
+      "withCredentials": false,
+    },
+  },
+  "type": "[API] Request",
+}
+`;

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`auth selectors TokenSelector returns token 1`] = `"entry"`;
+
 exports[`auth selectors selectAuth returns auth state 1`] = `
 Object {
   "error": HttpErrorResponse {
@@ -23,9 +25,9 @@ Object {
 }
 `;
 
-exports[`auth selectors selectAuthenticated returns sub state 1`] = `true`;
+exports[`auth selectors selectAuthenticated returns if user is authenticated 1`] = `true`;
 
-exports[`auth selectors selectError returns sub state 1`] = `
+exports[`auth selectors selectError returns error 1`] = `
 HttpErrorResponse {
   "error": "ARGH",
   "headers": HttpHeaders {
@@ -42,10 +44,6 @@ HttpErrorResponse {
 }
 `;
 
-exports[`auth selectors selectLoading returns sub state 1`] = `false`;
+exports[`auth selectors selectLoading returns loading 1`] = `false`;
 
-exports[`auth selectors selectToken returns sub state 1`] = `
-Object {
-  "accessToken": "entry",
-}
-`;
+exports[`auth selectors selectToken returns token 1`] = `"entry"`;

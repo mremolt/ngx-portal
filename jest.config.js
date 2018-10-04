@@ -5,7 +5,7 @@ module.exports = {
   collectCoverageFrom: ['projects/**/*.ts', 'src/app/**/*.ts'],
   coverageThreshold: {
     global: {
-      branches: 70,
+      branches: 70, // bug in branch coverage detection, Angular DI injections count as branch
       functions: 100,
       lines: 100,
       statements: 100,

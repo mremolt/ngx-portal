@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 import {
   AuthState,
+  TokenSelector,
   selectAuth,
   selectAuthenticated,
   selectError,
@@ -26,26 +27,38 @@ describe('auth selectors', () => {
   });
 
   describe('selectLoading', () => {
-    it('returns sub state', () => {
+    it('returns loading', () => {
       expect(selectLoading(state)).toMatchSnapshot();
     });
   });
 
   describe('selectToken', () => {
-    it('returns sub state', () => {
+    it('returns token', () => {
       expect(selectToken(state)).toMatchSnapshot();
     });
   });
 
   describe('selectError', () => {
-    it('returns sub state', () => {
+    it('returns error', () => {
       expect(selectError(state)).toMatchSnapshot();
     });
   });
 
   describe('selectAuthenticated', () => {
-    it('returns sub state', () => {
+    it('returns if user is authenticated', () => {
       expect(selectAuthenticated(state)).toMatchSnapshot();
+    });
+  });
+
+  describe('TokenSelector', () => {
+    let subject: TokenSelector;
+
+    beforeEach(() => {
+      subject = new TokenSelector();
+    });
+
+    it('returns token', () => {
+      expect(subject.select(state)).toMatchSnapshot();
     });
   });
 });

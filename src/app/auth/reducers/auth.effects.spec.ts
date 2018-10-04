@@ -1,10 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { APP_ENVIRONMENT, ApiError, AppReset, Go } from '@mr/ngx-utils';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { ReplaySubject, Subject } from 'rxjs';
+import { EMPTY, ReplaySubject, Subject } from 'rxjs';
 
-import { APP_ENVIRONMENT } from '../../tokens';
-import { Authenticate, AuthenticateError, AuthenticateSuccess } from './auth.actions';
+import { Authenticate, AuthenticateError, AuthenticateSuccess, Logout } from './auth.actions';
 import { AuthEffects } from './auth.effects';
 
 describe('AuthEffects', () => {
@@ -62,6 +63,62 @@ describe('AuthEffects', () => {
 
       req.flush('', { status: 403, statusText: 'Nix!' });
       httpMock.verify();
+    });
+  });
+
+  describe('redirectAfterLogin$', () => {
+    beforeEach(() => {
+      actions$.next(new AuthenticateSuccess({ accessToken: 'entry' }));
+    });
+
+    it('calls Go action redirecting to dashboard', done => {
+      effects.redirectAfterLogin$.subscribe(action => {
+        expect(action).toBeInstanceOf(Go);
+        expect(action).toMatchSnapshot();
+        done();
+      });
+    });
+  });
+
+  describe('redirectAfterLogout$', () => {
+    beforeEach(() => {
+      actions$.next(new Logout());
+    });
+
+    it('calls Go action redirecting to root', done => {
+      effects.redirectAfterLogout$.subscribe(action => {
+        expect(action).toBeInstanceOf(Go);
+        expect(action).toMatchSnapshot();
+        done();
+      });
+    });
+  });
+
+  describe('resetOnApiErrors$', () => {
+    describe('if the error has status 401', () => {
+      beforeEach(() => {
+        actions$.next(new ApiError(new HttpErrorResponse({ status: 401 })));
+      });
+
+      it('emits AppReset action', done => {
+        effects.resetOnApiErrors$.subscribe(action => {
+          expect(action).toBeInstanceOf(AppReset);
+          done();
+        });
+      });
+    });
+
+    describe('if the error does not have status 401', () => {
+      beforeEach(() => {
+        actions$.next(new ApiError(new HttpErrorResponse({ status: 404 })));
+      });
+
+      it('does not emit any action', done => {
+        effects.resetOnApiErrors$.subscribe(action => {
+          expect(action).toBe(EMPTY);
+          done();
+        });
+      });
     });
   });
 });
