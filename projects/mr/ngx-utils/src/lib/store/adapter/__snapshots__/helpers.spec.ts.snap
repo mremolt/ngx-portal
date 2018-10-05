@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers removeProp removes given property from the target object 1`] = `
+Object {
+  "hobbies": Array [
+    Object {
+      "id": "12",
+      "name": "Drinking tea",
+    },
+    Object {
+      "id": "13",
+      "name": "Carrying towels",
+    },
+  ],
+  "id": "42",
+  "lastname": "Dent",
+  "planet": Object {
+    "id": "43",
+    "name": "Earth",
+  },
+}
+`;
+
+exports[`helpers removeProps removes given properties from the target object 1`] = `
+Object {
+  "hobbies": Array [
+    Object {
+      "id": "12",
+      "name": "Drinking tea",
+    },
+    Object {
+      "id": "13",
+      "name": "Carrying towels",
+    },
+  ],
+  "id": "42",
+  "lastname": "Dent",
+}
+`;

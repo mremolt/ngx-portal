@@ -1,0 +1,591 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducers remove removes an entity from entities and id from result 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "46": Object {
+        "firstname": "Ford",
+        "hobbies": Array [
+          "13",
+        ],
+        "id": "46",
+        "lastname": "Perfect",
+        "planet": "44",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+      "44": Object {
+        "id": "44",
+        "name": "Beteigeuze",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "46",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers removeMany removes selected entities from entities and ids from result 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "46": Object {
+        "firstname": "Ford",
+        "hobbies": Array [
+          "13",
+        ],
+        "id": "46",
+        "lastname": "Perfect",
+        "planet": "44",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+      "44": Object {
+        "id": "44",
+        "name": "Beteigeuze",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers updateEmbedded updates the embedded entity 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "McMillan",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "drinking coffee",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsert adds does set dirty if specified 1`] = `
+Object {
+  "dirty": false,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsert adds the entity to an empty state 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsert adds the entity to the given state and merges embedded entities 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "McMillan",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsert adds the entity to the given state and merges embedded entities 2`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "McMillan",
+        "planet": "43",
+      },
+      "46": Object {
+        "firstname": "Ford",
+        "hobbies": Array [
+          "13",
+        ],
+        "id": "46",
+        "lastname": "Perfect",
+        "planet": "44",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+      "44": Object {
+        "id": "44",
+        "name": "Beteigeuze",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+    "46",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsert updates an entity already in the state 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea together",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+    "45",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsertMany adds the entities to an empty state 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "McMillan",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsertMany adds the entities to the given state and merges embedded entities 1`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "McMillan",
+        "planet": "43",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`reducers upsertMany adds the entities to the given state and merges embedded entities 2`] = `
+Object {
+  "dirty": true,
+  "entities": Object {
+    "collection": Object {
+      "42": Object {
+        "firstname": "Arthur",
+        "hobbies": Array [
+          "12",
+          "13",
+        ],
+        "id": "42",
+        "lastname": "Dent",
+        "planet": "43",
+      },
+      "45": Object {
+        "firstname": "Tricia",
+        "hobbies": Array [
+          "12",
+        ],
+        "id": "45",
+        "lastname": "McMillan",
+        "planet": "43",
+      },
+      "46": Object {
+        "firstname": "Ford",
+        "hobbies": Array [
+          "13",
+        ],
+        "id": "46",
+        "lastname": "Perfect",
+        "planet": "44",
+      },
+    },
+    "hobbies": Object {
+      "12": Object {
+        "id": "12",
+        "name": "Drinking tea",
+      },
+      "13": Object {
+        "id": "13",
+        "name": "Carrying towels",
+      },
+    },
+    "planets": Object {
+      "43": Object {
+        "id": "43",
+        "name": "Earth",
+      },
+      "44": Object {
+        "id": "44",
+        "name": "Beteigeuze",
+      },
+    },
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [
+    "42",
+    "45",
+    "46",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
