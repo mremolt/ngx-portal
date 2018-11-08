@@ -3,7 +3,7 @@ import { Action, ActionReducer } from '@ngrx/store';
 export const APP_RESET = '[Application] Reset State';
 
 export class AppReset implements Action {
-  readonly type = APP_RESET;
+  public readonly type = APP_RESET;
 }
 
 export function resetMetaReducer(reducer: ActionReducer<any>): ActionReducer<any> {

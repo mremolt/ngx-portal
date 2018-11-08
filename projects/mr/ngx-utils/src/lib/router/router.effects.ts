@@ -12,7 +12,7 @@ export { Observable, Action };
 @Injectable()
 export class RouterEffects {
   @Effect({ dispatch: false })
-  navigate$ = this.actions$.pipe(
+  public navigate$ = this.actions$.pipe(
     ofType<RouterActions.Go>(RouterActions.GO),
     map((action: RouterActions.Go) => action.payload),
     tap(({ path, query: queryParams, extras }) =>
@@ -21,13 +21,13 @@ export class RouterEffects {
   );
 
   @Effect({ dispatch: false })
-  navigateBack$ = this.actions$.pipe(
+  public navigateBack$ = this.actions$.pipe(
     ofType(RouterActions.BACK),
     tap(() => this.location.back())
   );
 
   @Effect({ dispatch: false })
-  navigateForward$ = this.actions$.pipe(
+  public navigateForward$ = this.actions$.pipe(
     ofType(RouterActions.FORWARD),
     tap(() => this.location.forward())
   );

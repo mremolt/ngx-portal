@@ -12,22 +12,22 @@ import {
 } from './api-request.actions';
 
 export class FetchUsersStart implements ApiStartAction {
-  readonly type = '[Users] Fetch Start';
+  public readonly type = '[Users] Fetch Start';
   constructor(public payload: any) {}
 }
 
 export class FetchUsersSuccess<T> implements ApiSuccessAction<T> {
-  readonly type = '[Users] Fetch Success';
+  public readonly type = '[Users] Fetch Success';
   constructor(public payload: T) {}
 }
 
 export class FetchUsersError implements ApiErrorAction {
-  readonly type = '[Users] Fetch Error';
+  public readonly type = '[Users] Fetch Error';
   constructor(public payload: HttpErrorResponse) {}
 }
 
 export class FetchUsersComplete implements Action {
-  readonly type = '[Users] Fetch Complete';
+  public readonly type = '[Users] Fetch Complete';
 }
 
 describe('ApiRequest Actions', () => {

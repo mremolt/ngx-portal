@@ -1,4 +1,6 @@
 {
   "extends": "stylelint-config-recommended",
-  "rules": {}
+  "rules": {
+    "no-empty-source": null
+  }
 }

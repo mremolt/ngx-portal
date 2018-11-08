@@ -25,7 +25,7 @@ export function buildApiHttpRequest<T>(
 @Injectable()
 export class ApiRequestEffects {
   @Effect()
-  processApiRequest$ = this.actions$.pipe(
+  public processApiRequest$ = this.actions$.pipe(
     ofType<ApiRequest>(ApiRequestActionTypes.ApiRequest),
     flatMap(action => {
       const baseRequest = action.payload.request;

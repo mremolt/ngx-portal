@@ -16,11 +16,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "typeRoots": ["node_modules/@types"],
-    "plugins": [
-      {
-        "name": "tslint-language-service-ts3"
-      }
-    ],
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
     "paths": {
       "@mr/ngx-utils": ["projects/mr/ngx-utils/src/public_api.ts"],
       "@mr/ngx-utils/*": ["projects/mr/ngx-utils/*"]

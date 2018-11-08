@@ -11,7 +11,7 @@ exports[`AppComponent renders the component 1`] = `
       class="header"
     >
       <h1>
-         Welcome to NGX-Portal! 
+        Welcome to NGX-Portal!
       </h1>
     </div>
     <div

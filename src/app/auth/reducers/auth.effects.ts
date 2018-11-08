@@ -18,7 +18,7 @@ import {
 @Injectable()
 export class AuthEffects {
   @Effect()
-  authenticate$ = this.actions$.pipe(
+  public authenticate$ = this.actions$.pipe(
     ofType<Authenticate>(AuthActionTypes.Authenticate),
     flatMap(action =>
       this.http.post<AuthToken>(`${this.env.apiUrl}/auth/login`, action.payload).pipe(
@@ -29,19 +29,19 @@ export class AuthEffects {
   );
 
   @Effect()
-  redirectAfterLogin$ = this.actions$.pipe(
+  public redirectAfterLogin$ = this.actions$.pipe(
     ofType<AuthenticateSuccess>(AuthActionTypes.AuthenticateSuccess),
     mapTo(new Go({ path: ['dashboard'] }))
   );
 
   @Effect()
-  redirectAfterLogout$ = this.actions$.pipe(
+  public redirectAfterLogout$ = this.actions$.pipe(
     ofType<Logout>(AuthActionTypes.Logout),
     mapTo(new Go({ path: ['/'] }))
   );
 
   @Effect()
-  resetOnApiErrors$ = this.actions$.pipe(
+  public resetOnApiErrors$ = this.actions$.pipe(
     ofType<ApiError>(ApiRequestActionTypes.ApiError),
     map(action => {
       if ([401].includes(action.payload.status)) {
