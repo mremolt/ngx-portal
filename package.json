@@ -8,22 +8,22 @@
     "watch:jit": "ng serve --hmr --aot false",
     "backend:mock": "node mock/server.js",
     "build": "ng build",
-    "test": "jest",
+    "test": "jest --notify",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --runInBand",
     "lint:code": "ng lint",
-    "lint:styles": "stylelint src/**/*.scss",
-    "lint": "run-s lint:code lint:styles",
-    "validate:ts": "tsc --project tsconfig.json --noEmit",
-    "validate": "run-s validate:ts lint",
-    "doc": "compodoc -p src/tsconfig.app.json --silent --output docs",
+    "lint:styles": "npx stylelint src/**/*.scss",
+    "lint": "npm run lint:code && npm run lint:styles",
+    "validate:ts": "npx tsc --project tsconfig.json --noEmit",
+    "validate": "npx run-s validate:ts lint",
+    "doc": "npx compodoc -p src/tsconfig.app.json --silent --output docs",
     "compile:production": "ng build --prod",
-    "build:production": "run-s validate test:coverage compile:production doc",
+    "build:production": "npx run-s validate test:coverage compile:production doc",
     "serve:production": "ws --port 8080  --compress --directory dist/ngx-portal --spa index.html",
     "stats:production": "webpack-bundle-analyzer dist/ngx-portal/stats.json",
     "build:ngx-utils": "ng build @mr/ngx-utils",
     "build:packages": "run-s build:ngx-utils",
-    "commit": "git-cz"
+    "commit": "npx git-cz"
   },
   "private": true,
   "dependencies": {
@@ -34,7 +34,7 @@
     "@angular/forms": "^7.0.3",
     "@angular/platform-browser": "^7.0.3",
     "@angular/platform-browser-dynamic": "^7.0.3",
-    "@angular/pwa": "^0.10.4",
+    "@angular/pwa": "^0.10.5",
     "@angular/router": "^7.0.3",
     "@angular/service-worker": "^7.0.3",
     "@ngrx/effects": "^6.1.0",
@@ -51,9 +51,9 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.4",
-    "@angular-devkit/build-ng-packagr": "^0.10.4",
-    "@angular/cli": "^7.0.4",
+    "@angular-devkit/build-angular": "^0.10.5",
+    "@angular-devkit/build-ng-packagr": "^0.10.5",
+    "@angular/cli": "^7.0.5",
     "@angular/compiler-cli": "^7.0.3",
     "@angular/language-service": "^7.0.3",
     "@commitlint/cli": "^7.2.1",
@@ -88,7 +88,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged && run-s validate",
+      "pre-commit": "lint-staged && npm run validate",
       "pre-push": "run-s build:production build:packages"
     }
   },
