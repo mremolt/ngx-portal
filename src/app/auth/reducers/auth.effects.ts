@@ -3,9 +3,10 @@ import { Inject, Injectable } from '@angular/core';
 import { APP_ENVIRONMENT, ApiError, ApiRequestActionTypes, AppReset, Go } from '@mr/ngx-utils';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { EMPTY, of } from 'rxjs';
-import { catchError, flatMap, map, mapTo } from 'rxjs/operators';
+import { catchError, flatMap, map, mapTo, switchMap } from 'rxjs/operators';
 
 import { Environment } from '../../../environments/environment';
+import { LoadUsers } from '../../users/reducers/users/users.actions';
 import {
   AuthActionTypes,
   AuthToken,
@@ -35,6 +36,12 @@ export class AuthEffects {
   );
 
   @Effect()
+  public loadUsersAfterLogin$ = this.actions$.pipe(
+    ofType<AuthenticateSuccess>(AuthActionTypes.AuthenticateSuccess),
+    mapTo(new LoadUsers())
+  );
+
+  @Effect()
   public redirectAfterLogout$ = this.actions$.pipe(
     ofType<Logout>(AuthActionTypes.Logout),
     mapTo(new Go({ path: ['/'] }))
@@ -43,9 +50,9 @@ export class AuthEffects {
   @Effect()
   public resetOnApiErrors$ = this.actions$.pipe(
     ofType<ApiError>(ApiRequestActionTypes.ApiError),
-    map(action => {
+    switchMap(action => {
       if ([401].includes(action.payload.status)) {
-        return new AppReset();
+        return of(new AppReset());
       }
       return EMPTY;
     })

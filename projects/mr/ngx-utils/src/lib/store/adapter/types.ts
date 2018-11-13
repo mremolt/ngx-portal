@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { DeepReadonly } from 'utility-types';
 
 export type NormalizedEntities<Entity extends object> = DeepReadonly<{
@@ -13,4 +14,5 @@ export type CollectionState<Entity extends object> = DeepReadonly<{
   loaded: boolean;
   dirty: boolean;
   updatedAt: Date | null;
+  error: null | HttpErrorResponse;
 }>;

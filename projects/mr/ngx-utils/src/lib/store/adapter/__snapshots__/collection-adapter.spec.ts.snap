@@ -6,6 +6,7 @@ Object {
   "entities": Object {
     "collection": Object {},
   },
+  "error": null,
   "loaded": false,
   "loading": false,
   "result": Array [],
@@ -60,6 +61,7 @@ Object {
       },
     },
   },
+  "error": null,
   "loaded": false,
   "loading": false,
   "result": Array [
@@ -107,6 +109,7 @@ Object {
       },
     },
   },
+  "error": null,
   "loaded": false,
   "loading": false,
   "result": Array [
@@ -160,6 +163,7 @@ Object {
       },
     },
   },
+  "error": null,
   "loaded": false,
   "loading": false,
   "result": Array [
@@ -204,6 +208,7 @@ Object {
       },
     },
   },
+  "error": null,
   "loaded": false,
   "loading": false,
   "result": Array [
@@ -256,6 +261,7 @@ Object {
       },
     },
   },
+  "error": null,
   "loaded": false,
   "loading": false,
   "result": Array [

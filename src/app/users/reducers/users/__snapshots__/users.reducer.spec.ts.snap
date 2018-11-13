@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users Reducer LoadUsersError matches a error state 1`] = `
+Object {
+  "dirty": false,
+  "entities": Object {
+    "collection": Object {},
+  },
+  "error": Object {
+    "message": "Argh",
+  },
+  "loaded": false,
+  "loading": false,
+  "result": Array [],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`Users Reducer LoadUsersStart matches a loading state 1`] = `
+Object {
+  "dirty": false,
+  "entities": Object {
+    "collection": Object {},
+  },
+  "error": null,
+  "loaded": false,
+  "loading": true,
+  "result": Array [],
+  "selected": null,
+  "updatedAt": null,
+}
+`;
+
+exports[`Users Reducer LoadUsersSuccess matches a success state 1`] = `
+Object {
+  "dirty": false,
+  "entities": Object {
+    "collection": Object {
+      "12": Object {
+        "id": 12,
+        "name": "test user",
+      },
+    },
+  },
+  "error": null,
+  "loaded": true,
+  "loading": false,
+  "result": Array [
+    "12",
+  ],
+  "selected": null,
+  "updatedAt": null,
+}
+`;

@@ -3,7 +3,8 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { APP_ENVIRONMENT, ApiError, AppReset, Go } from '@mr/ngx-utils';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { EMPTY, ReplaySubject, Subject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
+import { buffer } from 'rxjs/operators';
 
 import { Authenticate, AuthenticateError, AuthenticateSuccess, Logout } from './auth.actions';
 import { AuthEffects } from './auth.effects';
@@ -114,10 +115,12 @@ describe('AuthEffects', () => {
       });
 
       it('does not emit any action', done => {
-        effects.resetOnApiErrors$.subscribe(action => {
-          expect(action).toBe(EMPTY);
+        const endBuffering = new Subject();
+        effects.resetOnApiErrors$.pipe(buffer(endBuffering)).subscribe(actions => {
+          expect(actions).toEqual([]);
           done();
         });
+        endBuffering.next();
       });
     });
   });

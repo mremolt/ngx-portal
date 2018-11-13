@@ -6,9 +6,9 @@ module.exports = {
   coverageThreshold: {
     global: {
       branches: 70, // bug in branch coverage detection, Angular DI injections count as branch
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      functions: 90,
+      lines: 90,
+      statements: 90,
     },
   },
   modulePathIgnorePatterns: ['<rootDir>/dist'],

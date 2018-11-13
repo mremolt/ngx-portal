@@ -12,6 +12,7 @@ export function buildCollectionState<Entity extends object>(): CollectionState<E
     loaded: false,
     dirty: false,
     updatedAt: null,
+    error: null,
   };
 }
 

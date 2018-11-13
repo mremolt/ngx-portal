@@ -13,7 +13,7 @@ export function logger(reducer: ActionReducer<RootState>): ActionReducer<RootSta
 export function localStorageSyncReducer(
   reducer: ActionReducer<RootState>
 ): ActionReducer<RootState> {
-  return localStorageSync({ keys: ['auth'], rehydrate: true })(reducer);
+  return localStorageSync({ keys: ['auth', 'users'], rehydrate: true })(reducer);
 }
 
 const commonMetaReducers = [localStorageSyncReducer, resetMetaReducer];

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { HomeModule } from './home/home.module';
     CoreModule,
     NavigationModule,
     HomeModule,
+    UsersModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

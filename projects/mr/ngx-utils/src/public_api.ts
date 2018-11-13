@@ -16,4 +16,6 @@ export { NgxUtilsModule } from './lib/ngx-utils.module';
 export * from './lib/tokens';
 export * from './lib/types';
 
+export * from './lib/store/adapter/collection-adapter';
+
 export * from './lib/utils/reset';

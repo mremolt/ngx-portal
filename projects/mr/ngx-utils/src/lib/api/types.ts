@@ -14,7 +14,7 @@ export interface ApiTokenSelectorConstructor {
 }
 
 export interface ApiStartAction extends Action {
-  readonly payload: any;
+  readonly payload?: any;
 }
 
 export interface ApiSuccessAction<T> extends Action {
